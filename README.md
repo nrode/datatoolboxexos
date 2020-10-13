@@ -9,7 +9,11 @@ Ce dépôt contient les données nécessaires à la réalisation des exercices d
 
 La base de données WildFinder du WWF contient des données de présence/absence pour les amphibiens, reptiles, oiseaux et mammifères terrestres du monde entier au niveau des écorégions terrestres. Seul le sous-ensemble des mammifères est disponible dans ce dépôt avec 4936 espèces. Les données, préalablement nettoyées, sont structurées de la manière suivante dans le dossier `data/wwf-wilfinder/` :
 
-  - **wildfinder-mammals_list.csv** : liste taxonomique des 4936 espèces (identifiant, classe, ordre, famille, genre, espèce, etc.)
+  - `wildfinder-mammals_list.csv` : liste taxonomique des 4936 espèces de mammifères du monde entier
+  - `wildfinder-ecoregions_list.csv` : liste des 798 écorégions terrestres définies par le WWF
+  - `wildfinder-ecoregions_species.csv` : correspondances entre les espèces et les écorégions
+
+A ces données, s'ajoute la couche vectorielle permettant de cartographier ces écorégions terrestres (répertoire `data/wwf-ecoregions-layers/`)
 
 - **WWF Ecorégions** [:globe_with_meridians:](https://www.worldwildlife.org/pages/wildfinder-database)
 
