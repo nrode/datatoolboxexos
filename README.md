@@ -7,7 +7,9 @@ Ce dépôt contient les données nécessaires à la réalisation des exercices d
 
 - **WWF Wildfinder** [:globe_with_meridians:](https://www.worldwildlife.org/pages/wildfinder-database)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+La base de données WildFinder du WWF contient des données de présence/absence pour les amphibiens, reptiles, oiseaux et mammifères terrestres du monde entier au niveau des écorégions terrestres. Seul le sous-ensemble des mammifères est disponible dans ce dépôt avec 4936 espèces. Les données, préalablement nettoyées, sont structurées de la manière suivante dans le dossier `data/wwf-wilfinder/` :
+
+  - **wildfinder-mammals_list.csv** : liste taxonomique des 4936 espèces (identifiant, classe, ordre, famille, genre, espèce, etc.)
 
 - **WWF Ecorégions** [:globe_with_meridians:](https://www.worldwildlife.org/pages/wildfinder-database)
 
