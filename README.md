@@ -30,6 +30,11 @@ Le fichier texte contenant cette base de données se trouve dans `data/pantheria
 
 <br />
 
-- **Worldclim** [:globe_with_meridians:](https://www.worldclim.org/data/index.html)
+- **Worldclim** [:globe_with_meridians:](https://www.worldclim.org/data/worldclim21.html)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+La base de données Worldclim (version 2.1) fournit les normales climatiques pour la période 2070-2000 à différentes résolutions. Dans le dossier `data/worldclim`, seules les deux variables climatiques suivantes sont disponibles :
+
+  - `tmin` : température minimale mensuelle exprimée en °C (un fichier GeoTIFF par mois)
+  - `tmax` : température maximale mensuelle exprimée en °C (un fichier GeoTIFF par mois)
+
+Ces deux variables sont disponibles à une résolution horizontale de 2,5 minutes.
