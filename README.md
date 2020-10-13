@@ -17,13 +17,16 @@ La base de données WildFinder du WWF contient des données de présence/absence
   - `wildfinder-ecoregions_list.csv` : liste des 798 écorégions terrestres définies par le WWF
   - `wildfinder-ecoregions_species.csv` : correspondances entre les espèces et les écorégions
 
-A ces données, s'ajoute la couche vectorielle permettant de cartographier ces écorégions terrestres (répertoire `data/wwf-ecoregions-layers/`)
+A ces données s'ajoute la couche vectorielle permettant de cartographier ces écorégions terrestres (répertoire `data/wwf-ecoregions-layers/`).
 
 <br />
 
 - **PanTHERIA** [:globe_with_meridians:](https://esajournals.onlinelibrary.wiley.com/doi/10.1890/08-1494.1)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+La base de données PanTHERIA recense un très grand nombre de traits d'histoire de vie, traits écologiques et géographiques pour les espèces de mammifères du monde entier.
+Le fichier texte contenant cette base de données se trouve dans `data/pantheria-traits/PanTHERIA_1-0_WR05_Aug2008.txt`
+
+**N.B.** De nombreuses données sont manquantes et sont notées `-999`.
 
 <br />
 
