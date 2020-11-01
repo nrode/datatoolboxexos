@@ -38,3 +38,8 @@ La base de données Worldclim (version 2.1) fournit les normales climatiques pou
   - `tmax` : température maximale mensuelle exprimée en °C (un fichier GeoTIFF par mois)
 
 Ces deux variables sont disponibles à une résolution horizontale de 2,5 minutes.
+
+
+### Ressources
+
+:octocat: [Dépôt de la formation](https://github.com/FRBCesab/datatoolbox)
