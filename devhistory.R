@@ -23,3 +23,6 @@ rrtools::use_readme_rmd()
 
 Modify the readme with session.info
 
+
+## Install packages
+devtools::install_deps()

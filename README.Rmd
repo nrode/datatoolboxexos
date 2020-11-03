@@ -71,8 +71,6 @@ We welcome contributions from everyone. Before you get started, please see our [
 
 ### Session Info
 ```{r }
-
 utils::sessionInfo()
-
 ```
 
