@@ -37,5 +37,14 @@ devtools::document()
 Click the "Build" Icon and Click "Install & Restart"
 devtools::check()
 
-?datatoolboxexos::data_eco_list
+## Check the documentation of the functions
+?datatoolboxexos::data_ecoregion
 
+## Test the function
+d <- datatoolboxexos::data_ecoregion()
+
+## Load all functions
+devtools::load_all()
+
+
+##Create a exercise directory and a file exo_dplyr.Rmd
