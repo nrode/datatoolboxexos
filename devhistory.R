@@ -1,3 +1,5 @@
+Inspired by: https://annakrystalli.me/rrtools-repro-research/intro.html
+
 rrtools::use_compendium("../datatoolboxexos/", open = FALSE)
 
 ## Create a R directory and a file for functions
@@ -18,3 +20,6 @@ usethis::use_package("readr")
 rrtools::use_readme_rmd()
 
 ->Remove files CONDUCT.md and CONTRIBUTING.md
+
+Modify the readme with session.info
+
