@@ -1,7 +1,7 @@
 ---
 title: "Manipulation de données avec {dplyr}"
 author: "francois.guilhaumon@ird.fr"
-date: "04/11/2020"
+date: '03/11/2020'
 output:
   html_document:
     keep_md: yes
@@ -23,9 +23,9 @@ La base de données WildFinder du WWF contient des données de présence/absence
   - `wildfinder-ecoregions_list.csv` : liste des 798 écorégions terrestres définies par le WWF
   - `wildfinder-ecoregions_species.csv` : correspondances entre les espèces et les écorégions
 
-## Analyses
+# Analyses
 
-### Exploration des données
+## Exploration des données
 
 - Histogramme de la distribution du nombre d'espèces de mammifères par écorégion.
 
