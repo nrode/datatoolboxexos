@@ -35,7 +35,8 @@ software](https://cloud.r-project.org/) itself and optionally [RStudio
 Desktop](https://rstudio.com/products/rstudio/download/).
 
 You can download the compendium as a zip from this URL:
-[main.zip](/archive/main.zip). After unzipping:
+[main.zip](https://github.com/nrode/datatoolboxexos/archive/main.zip).
+After unzipping:
 
   - open the `.Rproj` file in RStudio
 
