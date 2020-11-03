@@ -7,3 +7,14 @@ usethis::use_r("data_wildfinder")
 Code > "Insert R oxygen skeleton"
 
 -> Modify the content
+
+## Update DESCRIPTION file
+usethis::use_package("here")
+usethis::use_package("readr")
+
+
+## Move ReadMe to the data directory
+## Creates a new Readme
+rrtools::use_readme_rmd()
+
+->Remove files CONDUCT.md and CONTRIBUTING.md
