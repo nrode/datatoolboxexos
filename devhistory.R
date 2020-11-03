@@ -29,3 +29,13 @@ devtools::install_deps()
 
 ## Create a man firectory and a help for each function
 devtools::document()
+
+
+->Close Rstudio and open again
+
+## Check that the package is OK
+Click the "Build" Icon and Click "Install & Restart"
+devtools::check()
+
+?datatoolboxexos::data_eco_list
+
