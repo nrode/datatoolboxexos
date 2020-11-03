@@ -34,8 +34,8 @@ installed on your computer the [R
 software](https://cloud.r-project.org/) itself and optionally [RStudio
 Desktop](https://rstudio.com/products/rstudio/download/).
 
-You can download the compendium as a zip from from this URL:
-[master.zip](/archive/master.zip). After unzipping:
+You can download the compendium as a zip from this URL:
+[main.zip](/archive/main.zip). After unzipping:
 
   - open the `.Rproj` file in RStudio
 
