@@ -24,5 +24,8 @@ rrtools::use_readme_rmd()
 Modify the readme with session.info
 
 
-## Install packages
+## Install dependencies
 devtools::install_deps()
+
+## Create a man firectory and a help for each function
+devtools::document()
