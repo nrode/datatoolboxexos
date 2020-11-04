@@ -14,6 +14,9 @@ Code > "Insert R oxygen skeleton"
 usethis::use_package("here")
 usethis::use_package("readr")
 
+## Add pipe
+usethis::use_pipe()
+devtools::document()
 
 ## Move ReadMe to the data directory
 ## Creates a new Readme
@@ -48,3 +51,33 @@ devtools::load_all()
 
 
 ##Create a exercise directory and a file exo_dplyr.Rmd
+
+################
+### Drake
+
+usethis::use_r(name="wrangle.R")
+usethis::use_r(name="plots.R")
+usethis::use_r(name="plan.R")
+file.create("_drake.R")
+dir.create("output")
+dir.create("output/plot")
+dir.create("output/text")
+
+# add needed packages
+usethis::use_package("dplyr")
+usethis::use_package("ggplot2")
+usethis::use_package("magrittr")
+usethis::use_package("forcats")
+usethis::use_package("fishualize") ## Works only if package already installed
+usethis::use_package("sf")
+usethis::use_package("drake")
+
+devtools::install_deps()
+
+# ignore files
+usethis::use_build_ignore(".drake")
+usethis::use_build_ignore("_drake.R")
+usethis::use_build_ignore("make.R")
+usethis::use_git_ignore(".drake")
+usethis::use_build_ignore("output/")
+

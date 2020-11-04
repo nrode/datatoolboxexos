@@ -1,0 +1,139 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Load data
+
+```{r }
+
+library(tidyverse)
+library(janitor)
+
+pantheria <- readr::read_delim("data/pantheria-traits/PanTHERIA_1-0_WR05_Aug2008.txt", delim = "\t")
+#pantheria <- readr::read_delim(here::here("data","pantheria","PanTHERIA_1-0_WR05_Aug2008.txt"), delim = "\t")
+
+pantheria
+
+## View dataset
+#View(pantheria)
+
+## Clean Names
+pantheria <- janitor::clean_names(pantheria)
+
+## Oneliner
+#pantheria_temp2 <- pantheria %>%
+#  rename(adult_body_mass = 'x5_1_adult_body_mass_g',
+#       gestation_len = 'x9_1_gestation_len_d',
+#       home_range_indiv = 'x22_2_home_range_indiv_km2',
+#       litters_per_year = 'x16_1_litters_per_year',
+#       max_longevity = 'x17_1_max_longevity_m') %>%
+#  mutate(msw05_order = as.factor(msw05_order), 
+ #        msw05_family = as.factor(msw05_family))
+
+## Convert as factor
+dat <- mutate(pantheria, 
+                         msw05_order = as.factor(msw05_order), 
+                         msw05_family = as.factor(msw05_family))
+
+## Change column names
+dat <- rename(dat,
+       adult_body_mass = 'x5_1_adult_body_mass_g',
+       gestation_len = 'x9_1_gestation_len_d',
+       home_range_indiv = 'x22_2_home_range_indiv_km2',
+       litter_size = 'x15_1_litter_size',
+       litters_per_year = 'x16_1_litters_per_year',
+       max_longevity = 'x17_1_max_longevity_m',
+       order = 'msw05_order',
+       family = 'msw05_family')
+
+## Subset only part of the data and replace -999 by NA
+dat <- dat %>%
+  select(order, family, adult_body_mass, max_longevity,home_range_indiv, msw05_species, litter_size)  %>%
+  na_if(-999)
+```
+
+
+# Compile data
+
+```{r }
+dat
+
+## Sample size per order
+dat %>%
+  count(order)
+
+## Sample size per family
+dat %>%
+  count(family)
+
+## Average home range
+dat %>%
+  filter(!is.na(home_range_indiv)) %>%
+  summarise(mean(home_range_indiv))
+
+## Mean Home range per family
+dat %>%
+  filter(!is.na(home_range_indiv)) %>%
+  group_by(family) %>%
+  summarise(m = mean(home_range_indiv), sd = sd(home_range_indiv), n = n())
+
+```
+
+# Graphical exploration
+
+```{r }
+## Filter family with more than 100 species
+dat %>%
+  group_by(family) %>% # group by family
+  mutate(n = n()) %>% # calculate number of entries per family
+  filter(n > 100) # select only the families with more than 100 entries
+
+## Build bar graph
+dat %>%
+  group_by(family) %>% # group by family
+  mutate(n = n()) %>% # calculate number of entries per family
+  filter(n > 100) %>% # select only the families with more than 100 entries
+  ggplot() +
+  aes(x = fct_reorder(family, n), y = n) + # order bars
+  geom_col() +
+  coord_flip() + # flip the bar chart
+  xlab("Family") + # add label for X axis
+  ylab("Counts") + # add label for Y axis
+  ggtitle("Number of entries per family") # add title
+
+
+theme_set(theme_bw()) # play around with theme
+
+## Filter out missing values in both litter size and longevity
+## Group by family, and select only those with more than 50 observations
+dat %>%
+  filter(!is.na(litter_size), !is.na(max_longevity)) %>%
+  group_by(family) %>% # group by family
+  mutate(n = n()) %>% # count the number of entries per family
+  mutate(max_longevity = max_longevity / 12) %>% # Change month to year
+  filter(n > 50) # select only those families with more than 50 entries
+
+
+dat %>%
+  filter(!is.na(litter_size), !is.na(max_longevity)) %>%
+  group_by(family) %>% # group by family
+  mutate(n = n()) %>% # count the number of entries per family
+  mutate(max_longevity = max_longevity / 12) %>% # Change month to year
+  filter(n > 20) %>% # select only those families with more than 50 entries
+  ggplot() +
+  aes(x = max_longevity, y = litter_size, col = family) + # scatter plot
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) + # se = TRUE to add confidence intervals
+  xlab("Longevity") + # add label for X axis
+  ylab("Litter size") + # add label for Y axis
+  ggtitle("Scatterplot") + # add title
+  facet_wrap(~ family, nrow = 3) # split in several panels,
+                                 # one for each family
+                                 # remove scale = 'free' for
+                                 # same scale for all plots
+```
