@@ -22,4 +22,6 @@ Imports:
     forcats,
     sf,
     fishualize,
-    visNetwork
+    visNetwork,
+    rnaturalearthdata,
+    cowplot

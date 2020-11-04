@@ -74,8 +74,11 @@ usethis::use_package("drake")
 usethis::use_package("visNetwork")
 usethis::use_package("magrittr")
 usethis::use_package("dplyr")
+usethis::use_package("rnaturalearthdata")
+usethis::use_package("cowplot")
 
-
+## Create a man firectory and a help for each function
+devtools::document()
 
 devtools::install_deps()
 

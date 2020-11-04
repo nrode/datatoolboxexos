@@ -37,3 +37,67 @@ join_data <- function(data_ursus, data_speco, data_eco) {
     ## second
     left_join(data_eco, by = "ecoregion_id")
 }
+
+
+#' Get number of ecoregions
+#'
+#' @param data The joined tibble containing Ursidae species and ecoregion info
+#'
+#' @return A tibble with number of ecoregions per species of family Ursidae
+#' @export
+#' @importFrom dplyr group_by
+#' @importFrom dplyr n_distinct
+#' @importFrom dplyr summarise
+#' @importFrom magrittr %>%
+#' @importFrom dplyr arrange
+#'
+#' @examples
+get_necoregions <- function(data) {
+  data %>%
+    dplyr::group_by(sci_name) %>%
+    dplyr::summarise(n_ecoregions = dplyr::n_distinct(ecoregion)) %>%
+    dplyr::arrange(dplyr::desc(n_ecoregions))
+}
+
+
+#' Tidy data pantheria
+#'
+#' @param data The raw pantheria dataset
+#'
+#' @return A cleaned tibble
+#' @export
+#' @importFrom dplyr mutate
+#' @importFrom dplyr rename
+#' @importFrom dplyr select
+#' @importFrom dplyr na_if
+#' @importFrom forcats as_factor
+#' @importFrom magrittr %>%
+#'
+#' @examples
+tidy_pantheria <- function(data) {
+  data %>%
+    dplyr::mutate(                                    # Conversion de type
+      order   = forcats::as_factor(MSW05_Order),
+      family  = forcats::as_factor(MSW05_Family)
+    ) %>%
+    dplyr::rename(                                    # Nom des colonnes
+      adult_bodymass = `5-1_AdultBodyMass_g`,
+      dispersal_age  = `7-1_DispersalAge_d`,
+      gestation      = `9-1_GestationLen_d`,
+      homerange      = `22-2_HomeRange_Indiv_km2`,
+      litter_size    = `16-1_LittersPerYear`,
+      longevity      = `17-1_MaxLongevity_m`
+    ) %>%
+    dplyr::select(                                    # Sélection de colonnes
+      order,
+      family,
+      adult_bodymass,
+      dispersal_age,
+      gestation,
+      homerange,
+      litter_size,
+      longevity
+    ) %>%
+    dplyr::na_if(-999)
+}
+

@@ -25,6 +25,12 @@ devtools::install(build = FALSE)
 # ----- drake
 ## Execute plan
 drake::r_make()
+
+# load the target in work environment
+loadd()
+# view the target at specific target
+readd(sp_list)
+
 ## Visualize targets
 drake::r_vis_drake_graph(targets_only = TRUE)
 ## Visualize targets and commands
