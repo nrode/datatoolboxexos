@@ -14,7 +14,7 @@ Code > "Insert R oxygen skeleton"
 usethis::use_package("here")
 usethis::use_package("readr")
 
-## Add pipe
+## Add pipe from package magrittr so that %>% can be used
 usethis::use_pipe()
 devtools::document()
 
@@ -71,6 +71,11 @@ usethis::use_package("forcats")
 usethis::use_package("fishualize") ## Works only if package already installed
 usethis::use_package("sf")
 usethis::use_package("drake")
+usethis::use_package("visNetwork")
+usethis::use_package("magrittr")
+usethis::use_package("dplyr")
+
+
 
 devtools::install_deps()
 
@@ -81,3 +86,8 @@ usethis::use_build_ignore("make.R")
 usethis::use_git_ignore(".drake")
 usethis::use_build_ignore("output/")
 
+
+# all in work environment
+loadd()
+# look at specific target
+readd(sp_list)
