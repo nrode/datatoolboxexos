@@ -26,11 +26,11 @@ We made some plots.
 drake::readd(fig1)
 ```
 
-```{r , echo=FALSE, , fig.cap= "Figure 2. Gestation"}
+```{r , echo=FALSE, fig.cap= "Figure 2. Gestation"}
 drake::readd(fig2)
 ```
 
-```{r , echo=FALSE, , fig.cap= "Figure 3. World map"}
+```{r , echo=FALSE, fig.cap= "Figure 3. World map"}
 drake::readd(fig3)
 ```
 # Discussion 
